@@ -21,9 +21,17 @@ def print_header
 	puts "------------"
 end
 
+# def print(students)
+# 	students.each do |student|		
+# 		puts "#{students[:name]} (#{students[:cohort]} cohort)"
+# 	end
+# end
+
 def print(students)
-	students.each_with_index do |student, index|
-		puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)"
+	counter = 0
+	while counter < students.count do
+		 puts "#{students[counter][:name]} (#{students[counter][:cohort]} cohort)"
+		 counter += 1
 	end
 end
 def print_l_only(students)
@@ -48,5 +56,5 @@ end
 
 students = input_students
 print_header
-print_short_names(students)
+print(students)
 print_footer(students)
