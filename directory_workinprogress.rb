@@ -13,7 +13,10 @@ def input_students
 			students << {name: name, cohort: cohort.to_sym}
 		else students << {name: name, cohort: :none_selected}
 		end
-		puts "Now we have #{students.count} students"
+		if students.count > 1 
+			puts "Now we have #{students.count} students"
+		else puts "Now we have #{students.count} student"
+		end
 		name = gets.chomp
 	end
 		# return the array of students
@@ -55,8 +58,6 @@ end
 def group_by_cohort(students)
 	cohort_groups = {}
 
-
-
 	students.each do |x| 
 		
 		cohorts = x[:cohort]
@@ -68,12 +69,8 @@ def group_by_cohort(students)
 		cohort_groups[cohorts].push(name)
 		
 	end
-	pp cohort_groups
+	puts cohort_groups
 
-	# pp existing_cohorts
-
-	# cohort_groups = {}
-	# existing_cohorts.map {|x| x => students[x][:name]}
 end
 
 students = input_students
