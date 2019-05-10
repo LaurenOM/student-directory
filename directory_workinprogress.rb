@@ -26,11 +26,27 @@ def print(students)
 		puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)"
 	end
 end
+def print_l_only(students)
+	students.each_with_index do |student, index|
+		if student[:name][0] == "l"
+			puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)"
+		end
+	end
+end
+
+def print_short_names(students)
+	students.each_with_index do |student, index|
+		if student[:name].length < 12
+			puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)"
+		end
+	end
+end
+
 def print_footer(students)
 	puts "Overall, we have #{students.count} great students"
 end
 
 students = input_students
 print_header
-print(students)
+print_short_names(students)
 print_footer(students)
