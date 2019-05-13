@@ -30,9 +30,11 @@ end
 
 def print(students)
 	counter = 0
-	while counter < students.count do
-		 puts "#{students[counter][:name]} (#{students[counter][:cohort]} cohort)"
-		 counter += 1
+	if students.count > 0 
+		while counter < students.count do
+			puts "#{students[counter][:name]} (#{students[counter][:cohort]} cohort)"
+			counter += 1
+		end
 	end
 end
 def print_l_only(students)
@@ -74,7 +76,7 @@ def group_by_cohort(students)
 end
 
 students = input_students
-group_by_cohort(students)
-# print_header
-# print(students)
-# print_footer(students)
+#group_by_cohort(students)
+print_header
+print(students)
+print_footer(students)
