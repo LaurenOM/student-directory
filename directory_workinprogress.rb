@@ -4,11 +4,11 @@ def input_students
 	puts "To finish, just hit return twice"
 
 	students = []
-	name = gets.chomp
+	name = gets.strip
 
 	while !name.empty? do 
 		puts "which cohort are you in?"
-		cohort = gets.chomp
+		cohort = gets.strip
 		if cohort != ""
 			students << {name: name, cohort: cohort.to_sym}
 		else students << {name: name, cohort: :none_selected}
@@ -17,7 +17,7 @@ def input_students
 			puts "Now we have #{students.count} students"
 		else puts "Now we have #{students.count} student"
 		end
-		name = gets.chomp
+		name = gets.strip
 	end
 		# return the array of students
 	return students
